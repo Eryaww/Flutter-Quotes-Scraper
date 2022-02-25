@@ -11,10 +11,12 @@ void main() {
 
 class MyApp extends StatelessWidget {
 
+    final _contens = ['Quotes', 'About'];
+
     @override
     Widget build(BuildContext context) {
         return MaterialApp(
-            title: 'Quotes App',
+            title: 'All in One Tools',
             theme: ThemeData(
                 colorScheme: const ColorScheme.light(
                     primary: Colors.orange,
