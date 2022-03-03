@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quotes_scraper/quotes_fav.dart';
 import 'package:flutter_quotes_scraper/api.dart';
-import 'package:universal_html/html.dart';
 
 class QuotesPage extends StatefulWidget {
     @override
@@ -138,6 +137,9 @@ class _QuotesPageState extends State<QuotesPage> {
                             _quote = fetchQuote(page);
                         });
                     }),
+                    Center(
+                        child: Text(page.toString())
+                    ),
                     IconButton(icon: Icon(Icons.navigate_next), onPressed: (){
                         setState((){
                             page++;

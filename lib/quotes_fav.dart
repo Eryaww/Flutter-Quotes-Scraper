@@ -64,7 +64,7 @@ class _favState extends State<Fav>{
                     }
                 ),
                 title: const Text('Favorite Quote'),
-                backgroundColor: Colors.orange,
+                backgroundColor: Colors.green,
             ),
             body: ListView(children: _finalFav,),
         );

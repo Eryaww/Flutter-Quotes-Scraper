@@ -1,7 +1,10 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:localstorage/localstorage.dart';
 
 const endpoint = 'http://192.168.1.100:8080/';
+
+final LocalStorage storage = LocalStorage('app');
 
 class Quote{
     final String text;
@@ -31,7 +34,19 @@ class Quote{
     }
 }
 
+List<Quote> fromLocalStorage(int page) {
+    if (storage.getItem(page.toString()) == null){
+        return [];
+    }
+    return storage.getItem(page.toString());
+}
+
 Future<List<Quote>> fetchQuote(int page) async {
+    final localItem = fromLocalStorage(page);
+    if(localItem.isNotEmpty){
+        return localItem;
+    }
+    
     final response = await http.get(
         Uri.parse(endpoint+page.toString()),
         headers: {
@@ -41,7 +56,9 @@ Future<List<Quote>> fetchQuote(int page) async {
     if(response.statusCode == 200){
         final data = json.decode(response.body);
         final quotes = data as List;
-        return quotes.map((e) => Quote.fromJson(e)).toList();
+        final returnData = quotes.map((e) => Quote.fromJson(e)).toList();
+        storage.setItem(page.toString(), returnData);
+        return returnData;
     }else{
         throw Exception('Failed to fetch API');
     }
