@@ -35,11 +35,10 @@ class QuotesScraper(scrapy.Spider):
     def parse_quotes(self, response):
         quotes = json.loads(response.text)
         for quote in quotes:
-            print(quote)
             yield {
                 'author': quote['author']['name'].encode('ascii', 'ignore').decode('utf-8'),
                 'quote': quote['body'].encode('ascii', 'ignore').decode('utf-8'),
-                'tags': quote['link'].split('-'),
+                'tags': [x.capitalize() for x in quote['link'].split('-')],
             }
 
 if __name__ == '__main__':

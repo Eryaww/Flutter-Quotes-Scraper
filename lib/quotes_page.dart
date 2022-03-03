@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quotes_scraper/quotes_fav.dart';
 import 'package:flutter_quotes_scraper/api.dart';
+import 'package:universal_html/html.dart';
 
 class QuotesPage extends StatefulWidget {
     @override
@@ -12,10 +13,10 @@ List<Widget> tagsRow(Quote quote){
         Container(
             decoration: BoxDecoration(
                 border: Border.all(color: Colors.grey),
-                borderRadius: BorderRadius.circular(4.0),
-                color: Colors.orange,
+                borderRadius: BorderRadius.circular(4),
+                color: Colors.lightGreen,
             ),
-            padding: const EdgeInsets.symmetric(horizontal: 6.0, vertical: 2.0),
+            padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
             margin: const EdgeInsets.only(bottom: 6),
             child: Text(tag, style: const TextStyle(fontSize: 12, color: Colors.white),),
         ) as Widget
@@ -98,16 +99,12 @@ class _QuotesPageState extends State<QuotesPage> {
                             ],
                         ),
                         SizedBox(
-                            height: 25,
+                            height: 32.5,
                             child: ListView(
-                                    scrollDirection: Axis.horizontal,
-                                    children: tags,
+                                scrollDirection: Axis.horizontal,
+                                children: tags,
                             ),
                         )
-                        
-                        // Row(
-                        //     children: tagsRow(quote),
-                        // ),
                     ],
                 ),
             onTap: (){

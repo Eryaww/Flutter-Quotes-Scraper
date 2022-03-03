@@ -17,9 +17,10 @@ class MyApp extends StatelessWidget {
     Widget build(BuildContext context) {
         return MaterialApp(
             title: 'All in One Tools',
+            debugShowCheckedModeBanner: false,
             theme: ThemeData(
                 colorScheme: const ColorScheme.light(
-                    primary: Colors.orange,
+                    primary: Colors.green,
                     secondary: Colors.purple,
                 ),
             ),
