@@ -1,0 +1,464 @@
+{
+    "namespace": "quotery/v1",
+    "routes": {
+        "/quotery/v1": {
+            "namespace": "quotery/v1",
+            "methods": [
+                "GET"
+            ],
+            "endpoints": [
+                {
+                    "methods": [
+                        "GET"
+                    ],
+                    "args": {
+                        "namespace": {
+                            "required": false,
+                            "default": "quotery/v1"
+                        },
+                        "context": {
+                            "required": false,
+                            "default": "view"
+                        }
+                    }
+                }
+            ],
+            "_links": {
+                "self": "https://api.quotery.com/wp-json/quotery/v1"
+            }
+        },
+        "/quotery/v1/authors": {
+            "namespace": "quotery/v1",
+            "methods": [
+                "GET"
+            ],
+            "endpoints": [
+                {
+                    "methods": [
+                        "GET"
+                    ],
+                    "args": {
+                        "page": {
+                            "required": false,
+                            "default": 1,
+                            "type": "integer"
+                        },
+                        "per_page": {
+                            "required": false,
+                            "default": 10,
+                            "type": "integer"
+                        },
+                        "search": {
+                            "required": false
+                        },
+                        "initial": {
+                            "required": false
+                        },
+                        "birthday": {
+                            "required": false
+                        },
+                        "orderby": {
+                            "required": false,
+                            "default": "title"
+                        },
+                        "profession": {
+                            "required": false
+                        }
+                    }
+                }
+            ],
+            "_links": {
+                "self": "https://api.quotery.com/wp-json/quotery/v1/authors"
+            }
+        },
+        "/quotery/v1/authors(?:/?)(?P<slug>[^\\/]+)?": {
+            "namespace": "quotery/v1",
+            "methods": [
+                "GET"
+            ],
+            "endpoints": [
+                {
+                    "methods": [
+                        "GET"
+                    ],
+                    "args": {
+                        "page": {
+                            "required": false,
+                            "default": 1,
+                            "type": "integer"
+                        },
+                        "per_page": {
+                            "required": false,
+                            "default": 10,
+                            "type": "integer"
+                        },
+                        "orderby": {
+                            "required": false,
+                            "default": "title"
+                        },
+                        "meta": {
+                            "required": false,
+                            "default": false
+                        },
+                        "author": {
+                            "required": false,
+                            "default": true
+                        }
+                    }
+                }
+            ]
+        },
+        "/quotery/v1/collections": {
+            "namespace": "quotery/v1",
+            "methods": [
+                "GET"
+            ],
+            "endpoints": [
+                {
+                    "methods": [
+                        "GET"
+                    ],
+                    "args": {
+                        "page": {
+                            "required": false,
+                            "default": 1,
+                            "type": "integer"
+                        },
+                        "per_page": {
+                            "required": false,
+                            "default": 20,
+                            "type": "integer"
+                        },
+                        "orderby": {
+                            "required": false,
+                            "default": "date"
+                        },
+                        "initial": {
+                            "required": false
+                        }
+                    }
+                }
+            ],
+            "_links": {
+                "self": "https://api.quotery.com/wp-json/quotery/v1/collections"
+            }
+        },
+        "/quotery/v1/collections(?:/?)(?P<slug>[^\\/]+)?": {
+            "namespace": "quotery/v1",
+            "methods": [
+                "GET"
+            ],
+            "endpoints": [
+                {
+                    "methods": [
+                        "GET"
+                    ],
+                    "args": {
+                        "page": {
+                            "required": false,
+                            "default": 1,
+                            "type": "integer"
+                        },
+                        "per_page": {
+                            "required": false,
+                            "default": 10,
+                            "type": "integer"
+                        },
+                        "orderby": {
+                            "required": false,
+                            "default": "title"
+                        },
+                        "meta": {
+                            "required": false,
+                            "default": false
+                        },
+                        "collections": {
+                            "required": false,
+                            "default": true
+                        }
+                    }
+                }
+            ]
+        },
+        "/quotery/v1/contact": {
+            "namespace": "quotery/v1",
+            "methods": [
+                "POST"
+            ],
+            "endpoints": [
+                {
+                    "methods": [
+                        "POST"
+                    ],
+                    "args": {
+                        "email": {
+                            "required": false
+                        },
+                        "name": {
+                            "required": false
+                        },
+                        "message": {
+                            "required": false
+                        }
+                    }
+                }
+            ],
+            "_links": {
+                "self": "https://api.quotery.com/wp-json/quotery/v1/contact"
+            }
+        },
+        "/quotery/v1/featured": {
+            "namespace": "quotery/v1",
+            "methods": [
+                "GET"
+            ],
+            "endpoints": [
+                {
+                    "methods": [
+                        "GET"
+                    ],
+                    "args": []
+                }
+            ],
+            "_links": {
+                "self": "https://api.quotery.com/wp-json/quotery/v1/featured"
+            }
+        },
+        "/quotery/v1/posts": {
+            "namespace": "quotery/v1",
+            "methods": [
+                "GET"
+            ],
+            "endpoints": [
+                {
+                    "methods": [
+                        "GET"
+                    ],
+                    "args": {
+                        "page": {
+                            "required": false,
+                            "default": 1,
+                            "type": "integer"
+                        },
+                        "per_page": {
+                            "required": false,
+                            "default": 20,
+                            "type": "integer"
+                        },
+                        "orderby": {
+                            "required": false,
+                            "default": "date"
+                        }
+                    }
+                }
+            ],
+            "_links": {
+                "self": "https://api.quotery.com/wp-json/quotery/v1/posts"
+            }
+        },
+        "/quotery/v1/posts(?:/?)(?P<slug>[^\\/]+)?": {
+            "namespace": "quotery/v1",
+            "methods": [
+                "GET"
+            ],
+            "endpoints": [
+                {
+                    "methods": [
+                        "GET"
+                    ],
+                    "args": []
+                }
+            ]
+        },
+        "/quotery/v1/quotes": {
+            "namespace": "quotery/v1",
+            "methods": [
+                "GET"
+            ],
+            "endpoints": [
+                {
+                    "methods": [
+                        "GET"
+                    ],
+                    "args": {
+                        "page": {
+                            "required": false,
+                            "default": 1,
+                            "type": "integer"
+                        },
+                        "per_page": {
+                            "required": false,
+                            "default": 20,
+                            "type": "integer"
+                        },
+                        "search": {
+                            "required": false
+                        },
+                        "orderby": {
+                            "required": false,
+                            "default": "editorspicks rand"
+                        },
+                        "author": {
+                            "required": false
+                        },
+                        "topic": {
+                            "required": false
+                        }
+                    }
+                }
+            ],
+            "_links": {
+                "self": "https://api.quotery.com/wp-json/quotery/v1/quotes"
+            }
+        },
+        "/quotery/v1/quotes(?:/?)(?P<slug>[^\\/]+)?": {
+            "namespace": "quotery/v1",
+            "methods": [
+                "GET"
+            ],
+            "endpoints": [
+                {
+                    "methods": [
+                        "GET"
+                    ],
+                    "args": {
+                        "page": {
+                            "required": false,
+                            "default": 1,
+                            "type": "integer"
+                        },
+                        "per_page": {
+                            "required": false,
+                            "default": 20,
+                            "type": "integer"
+                        },
+                        "orderby": {
+                            "required": false,
+                            "default": "editorspicks rand"
+                        }
+                    }
+                }
+            ]
+        },
+        "/quotery/v1/search": {
+            "namespace": "quotery/v1",
+            "methods": [
+                "GET"
+            ],
+            "endpoints": [
+                {
+                    "methods": [
+                        "GET"
+                    ],
+                    "args": {
+                        "page": {
+                            "required": false,
+                            "default": 1,
+                            "type": "integer"
+                        },
+                        "per_page": {
+                            "required": false,
+                            "default": 10,
+                            "type": "integer"
+                        },
+                        "search": {
+                            "required": true
+                        },
+                        "orderby": {
+                            "required": false,
+                            "default": "date"
+                        }
+                    }
+                }
+            ],
+            "_links": {
+                "self": "https://api.quotery.com/wp-json/quotery/v1/search"
+            }
+        },
+        "/quotery/v1/topics": {
+            "namespace": "quotery/v1",
+            "methods": [
+                "GET"
+            ],
+            "endpoints": [
+                {
+                    "methods": [
+                        "GET"
+                    ],
+                    "args": {
+                        "page": {
+                            "required": false,
+                            "default": 1,
+                            "type": "integer"
+                        },
+                        "per_page": {
+                            "required": false,
+                            "default": 10,
+                            "type": "integer"
+                        },
+                        "search": {
+                            "required": false
+                        },
+                        "orderby": {
+                            "required": false,
+                            "default": "title"
+                        },
+                        "type": {
+                            "required": false
+                        },
+                        "initial": {
+                            "required": false
+                        }
+                    }
+                }
+            ],
+            "_links": {
+                "self": "https://api.quotery.com/wp-json/quotery/v1/topics"
+            }
+        },
+        "/quotery/v1/topics/(?P<slug>[^\\/]+)?": {
+            "namespace": "quotery/v1",
+            "methods": [
+                "GET"
+            ],
+            "endpoints": [
+                {
+                    "methods": [
+                        "GET"
+                    ],
+                    "args": {
+                        "page": {
+                            "required": false,
+                            "default": 1,
+                            "type": "integer"
+                        },
+                        "per_page": {
+                            "required": false,
+                            "default": 10,
+                            "type": "integer"
+                        },
+                        "orderby": {
+                            "required": false,
+                            "default": "title"
+                        },
+                        "meta": {
+                            "required": false,
+                            "default": false
+                        },
+                        "topic": {
+                            "required": false,
+                            "default": true
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "_links": {
+        "up": [
+            {
+                "href": "https://api.quotery.com/wp-json/"
+            }
+        ]
+    }
+}

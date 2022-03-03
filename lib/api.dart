@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-const endpoint = 'http://127.0.0.1:8000/';
+const endpoint = 'http://192.168.1.100:8080/';
 
 class Quote{
     final String text;
@@ -16,7 +16,7 @@ class Quote{
 
     factory Quote.fromJson(Map<String, dynamic> json){
         return Quote(
-            text: json['text'], 
+            text: json['quote'], 
             author: json['author'], 
             tags: (json['tags'] as List).map((e) => e as String).toList(),
         );

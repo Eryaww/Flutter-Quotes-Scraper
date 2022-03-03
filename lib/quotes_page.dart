@@ -77,6 +77,7 @@ class _QuotesPageState extends State<QuotesPage> {
         //     }
         //     print(_alreadyFav);
         // }
+        final tags = tagsRow(quote);
         return InkWell(
             child: 
                 Column(
@@ -96,9 +97,17 @@ class _QuotesPageState extends State<QuotesPage> {
                                 ),
                             ],
                         ),
-                        Row(
-                            children: tagsRow(quote),
-                        ),
+                        SizedBox(
+                            height: 25,
+                            child: ListView(
+                                    scrollDirection: Axis.horizontal,
+                                    children: tags,
+                            ),
+                        )
+                        
+                        // Row(
+                        //     children: tagsRow(quote),
+                        // ),
                     ],
                 ),
             onTap: (){
